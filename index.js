@@ -1,6 +1,7 @@
 const { ApolloServer } = require('apollo-server');
 
 const SessionAPI = require('./datasources/sessions');
+const SpeakerAPI = require('./datasources/speakers');
 
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
@@ -8,7 +9,8 @@ const resolvers = require('./resolvers');
 const defaultParams = {introspection: true, playground: true};
 
 const dataSources = () => ({
-    sessionAPI : new SessionAPI()
+    sessionAPI : new SessionAPI(),
+    speakerAPI : new SpeakerAPI()
 });
 
 const params = Object.assign(defaultParams , { typeDefs, resolvers, dataSources });

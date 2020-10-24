@@ -35,6 +35,14 @@ class SessionAPI extends DataSource {
         selectedSession.attendees = (parseInt(selectedSession.attendees) || 0) + numAttended;
         return selectedSession;
     }
+
+    addNewSession({session}) {
+        const maxId = Math.max(...sessions.map(({id}) => id)) + 1;
+        const newSession = Object.assign(session, {id: maxId});
+        //console.log('SIMON adding Session:',  newSession);
+        sessions.push(newSession);
+        return newSession;
+    }
 }
 
 module.exports = SessionAPI;

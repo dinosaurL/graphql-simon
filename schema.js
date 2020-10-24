@@ -23,8 +23,8 @@ type Query {
 type Mutation {
     toggleFavouriteSession(id: ID): Session
     addAttendees(id: ID, numAttended: Int): Session
+    addNewSession(session: SessionInput): Session
 }
-
 type Speaker {
     id: ID!
     bio: String
@@ -45,6 +45,19 @@ type Session {
     favourite: Boolean
     attendees: Int
     speakers: [Speaker]
+}
+input SessionInput {
+    title: String!
+    description: String
+    startsAt: String
+    endsAt: String
+    room: String
+    day: String
+    format: String
+    track: String
+    level: String
+    favourite: Boolean
+    attendees: Int
 }
 `;
 module.exports = schema;

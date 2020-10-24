@@ -20,8 +20,20 @@ class SessionAPI extends DataSource {
     }
 
     getSessionById(selectedId) {
-        //console.log(`SIMON ${selectedId} sess:`, typeof selectedId, typeof parseInt(selectedId));
+        // console.log(`SIMON ${selectedId} sess:`, typeof selectedId, typeof parseInt(selectedId));
         return sessions.filter(({id}) => (id === parseInt(selectedId)))[0];
+    }
+
+    toggleFavouriteSession(selectedId) {
+        const selectedSession = sessions.filter(({id}) => (id === parseInt(selectedId)))[0];
+        selectedSession.favourite = !selectedSession.favourite;
+        return selectedSession;
+    }
+
+    addAttendees(selectedId, numAttended) {
+        const selectedSession = sessions.filter(({id}) => (id === parseInt(selectedId)))[0];
+        selectedSession.attendees = (parseInt(selectedSession.attendees) || 0) + numAttended;
+        return selectedSession;
     }
 }
 

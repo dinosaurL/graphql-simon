@@ -8,14 +8,14 @@ There're two datasources - one of which, **speakers**, is a mock API which requi
 
 You can check if API is initialised by loading:  `http://localhost:3000/speakers`
 
-To run the Graph API playground go to main directory and run `npm install`, followed by `npm run start`.
+To run the GraphQL playground go to main directory and run `npm install`, followed by `npm run start`.
 
 GraphQL playground should be available on: `http://localhost:4000`
 
 Sample query:
 ```
 query {
-  	sessionById(id: 138191) {
+  sessionById(id: 138191) {
     id
     title
     description

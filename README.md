@@ -74,3 +74,5 @@ mutation {
   }
 }
 ```
+**NOTE:**
+Code is written in Vanilla JS (ES6). Unlike course code, I did not use lodash for data manipulation.

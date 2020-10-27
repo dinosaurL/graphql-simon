@@ -1,6 +1,6 @@
 # graphql-simon
 
-This repo contains working code for the PluralSight course 'Building a GraphQL API with Apollo Server' up to Chapetr 5.
+This repo contains working code for the PluralSight course 'Building a GraphQL API with Apollo Server' up to and including Chapter 5.
 
 There're two datasources - one of which, **speakers**, is a mock API which requires initialising via:
 1. going into sub-directory: `data/speakers`
